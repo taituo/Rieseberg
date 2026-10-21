@@ -1,0 +1,22 @@
+{
+  "name": "taituo",
+  "owner": {
+    "name": "taituo",
+    "url": "https://github.com/taituo"
+  },
+  "description": "taituo's agent skills.",
+  "plugins": [
+    {
+      "name": "rieseberg",
+      "source": "./",
+      "description": "Meta-skills for ambitious work with models: altitude, depth, range and an outside judge.",
+      "category": "productivity",
+      "keywords": [
+        "ambition",
+        "meta-skills",
+        "prompting",
+        "verification"
+      ]
+    }
+  ]
+}

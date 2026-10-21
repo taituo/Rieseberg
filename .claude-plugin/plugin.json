@@ -1,0 +1,27 @@
+{
+  "name": "rieseberg",
+  "version": "0.1.0",
+  "description": "Meta-skills for ambitious work with models: altitude, depth, range and an outside judge. Based on Felix Rieseberg's tutorial on being more ambitious with AI.",
+  "author": {
+    "name": "taituo",
+    "url": "https://github.com/taituo"
+  },
+  "homepage": "https://github.com/taituo/rieseberg",
+  "repository": "https://github.com/taituo/rieseberg",
+  "license": "MIT",
+  "keywords": [
+    "ambition",
+    "meta-skills",
+    "prompting",
+    "verification",
+    "productivity"
+  ],
+  "skills": [
+    "./skills/ambition/ambition",
+    "./skills/ambition/ambitious-prompt",
+    "./skills/ambition/altitude",
+    "./skills/ambition/depth",
+    "./skills/ambition/range",
+    "./skills/ambition/outside-judge"
+  ]
+}
