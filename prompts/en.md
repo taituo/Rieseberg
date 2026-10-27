@@ -4,6 +4,8 @@ Copy-paste prompts for getting a model to do bigger, deeper and more honest work
 
 These are original prompts built on the ideas in Felix Rieseberg's [How to be more ambitious: A tutorial for humans with models](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/), not translations of it.
 
+From **Model experience** onward, the sections extend those ideas with current working practice for running agents: raw access, a graded road, reviewer crews, taught taste, variants and re-testing.
+
 ## How these affect a model
 
 Written from the model's side. These are tendencies, not guarantees: a model cannot observe itself perfectly.
@@ -17,6 +19,9 @@ The key finding: ambition and external verification belong together. A hard goal
 5. **It judges its own work too kindly.** A test, held-out data or a separate agent that never sees the reasoning works far better than "check it yourself".
 6. **Framing changes what it attempts.** Told it has a computer, software and data, it attempts more. Shown a task as ordinary rather than impossible, it gives up less often. The Dantzig effect: he solved two open problems believing they were homework.
 7. **Permission to fail makes it bolder and more honest at once.** When a partial result is acceptable, it does not have to choose between cautious and exaggerated.
+8. **It works best on the whole picture, with a map.** Handed a pre-cut slice of data, it works inside the slice. Given the whole picture through tools whose contents are documented, it chooses what it needs. Ask what you would want if you were the one doing the task: raw data, a computer, room to decide.
+9. **Finding flaws is easier than making things.** A reviewer needs less capability than a maker, so a lighter model, or several in parallel, still catches a lot. Their findings need a judge of their own, because a critique can be fair and still beside the point.
+10. **Guidance expires.** Instructions written for last generation's model can hold the next one back, and sometimes the bare prompt wins. Re-test what you embed.
 
 ## Altitude: the outcome, not the task
 
@@ -48,6 +53,12 @@ This [presentation / report / memo] exists so that someone makes decisions. Work
 
 ```text
 I have asked you again and again to [recurring task, e.g. fix individual bugs]. Let's stop doing that. Design how you would take this on permanently ([e.g. the app stays crash-free]): what data and access you need, how you will notice on your own when something needs doing, how you will verify your own work, and when you need to ask me. List what has to be built first.
+```
+
+**A5. Automation or augmentation**
+
+```text
+For [task], tell me which it is. Automation: a chore you take off my hands, worth it when it saves time or money or frees me for work I value. Augmentation: something I cannot do by hand for lack of skill, technique or knowledge. For automation, show what it saves. For augmentation, show what becomes possible that was not before, and which of my habits would have to change to use it. Done when the answer names the saving or the new capability as a number or a concrete example.
 ```
 
 ## Depth: the way the best in the field would do it
@@ -116,6 +127,114 @@ Finally, sum up what each one changed and what remains open.
 This is what I'm doing: [description]. Which tools, media or methods from entirely different fields could make this an order of magnitude better, even though they aren't normally used for this? (E.g. 3D rendering, simulation, sound design, experimental design, map-based views.) Pick the most promising one and build a small experiment right away.
 ```
 
+## Model experience: raw access with a manual
+
+Ask what you would want if you were the one doing the task. A model works best with the whole picture in reach, so give it tools it can use well instead of a slice you cut for it. The upfront cost of setting this up pays back on every later task.
+
+**M1. Ask what the model needs**
+
+```text
+My task is [task]. Imagine you are doing it with full freedom. What would you want in front of you: which raw data, which tools, which permissions, which decisions left to you? List them and mark which you already have and which you need from me. Do what you can with what you have, and end with the three items that would change the result most.
+```
+
+**M2. A manual for every tool**
+
+```text
+Start from the whole picture. Go through the tools you have and write yourself a short manual for each: what data sits behind it, when to call it, what it returns, what it costs. Keep the manuals in [a notes file / the project instructions]. Then pull only what the task needs, and note which tool answered which question.
+```
+
+**M3. Start in the browser, promote what works**
+
+```text
+Use [the app / website / dashboard] the way I would, through the browser, for [workflow]. After each run, tell me which steps were slow, fragile or repetitive, and which of them a direct connection (an API, an export, a connector) would remove. Propose the first connection to build, with the evidence from your runs.
+```
+
+## Process: grade the road, not only the destination
+
+Where "good" is hard to pin down (writing, research, strategy), the way the result was reached is something a reviewer can check. Reward the sound road.
+
+**P1. A rubric with a road in it**
+
+```text
+Before you start on [task], write a rubric in two parts. Outcome: what a good result looks like. Road: which sources, methods and checks a good result must come from. A correct result reached by a guess scores low; a slightly imperfect result reached by a sound road scores high. Show me the rubric, work to it, and at the end list the evidence for each line, so that someone other than you can score it.
+```
+
+**P2. A primary source for every number**
+
+```text
+In [document], find every number, date, quote and named claim. For each one, find the primary source (the original document, dataset or statement, not an article about it), confirm that the source really is primary, and compare the claim with it. Return a table: claim, primary source, match / mismatch / unverifiable. Done when no claim is left without a row.
+```
+
+**P3. The steps between the blank page and the piece**
+
+```text
+Find out how the best [writers / analysts / designers] actually work on [piece]: the steps between a blank page and a finished result. Run those steps in order and show each intermediate. For example: state the argument, magnify it to its strongest form, list what you disagree with most, write the strongest counterargument, then revise. Done when every step has its own visible output.
+```
+
+## Taste: teach the model your feedback
+
+Your review is the scarcest resource in the loop. Turn it into principles, so the first draft arrives already shaped by it and your review goes to what is new.
+
+**T1. Collect the raw material**
+
+```text
+Search [the places where I give feedback: chat, code review, comments, email] for the feedback I have given on [type of work]. Collect it in [a file] as raw material: what I said, on what, and what changed afterwards. Keep each entry as it was. Done when the file holds [N] examples with their context.
+```
+
+**T2. Condense into principles**
+
+```text
+Read [the file]. Condense it into at most [15] principles I apply when I review [type of work]. Write each as a test someone else could run on a draft, with one example from my feedback. Mark which principles I state often and which I follow without ever saying them.
+```
+
+**T3. The principles I hold without knowing**
+
+```text
+Look at what I accepted, rejected and rewrote in [the file], as well as at what I said. Which principles would explain those choices and are missing from the list? Give each one with its evidence and a draft test. I will tell you which are right.
+```
+
+**T4. Side by side**
+
+```text
+For the next [5] items, write your review and seal it in [a file] before I write mine. Then compare the two: where they match, where they differ, and what each difference says about the principles. Update the principles from the differences. Done when you have listed the principles that changed and the ones that held.
+```
+
+Run T4 before handing over any review. Trust grows from a measured match, not from a decision to trust.
+
+## Variants: many builds, few views
+
+Attention is the limit, not production. Build many, show few.
+
+**V1. Fan out, then cull**
+
+```text
+For [goal], build [N] distinct variants, each a different idea rather than a tweak of one. Critique each against [the check / the goal]. Keep the [three] strongest and, in each, remove everything that does not serve the goal: fewer buttons, fewer sections, fewer words. Show me only those, with one line on why each survived and what was cut.
+```
+
+**V2. The first-use test**
+
+```text
+Before showing me [product / page / flow], write the test it must pass with a first-time user: what they should manage to do within [N] minutes without help, and what the first moment of recognition looks like. Run it as a simulated first-time user in a clean session and report where they stalled. Fix the stalls and run again. Then give me the test script so I can run it with two real people. Done when a clean-session run completes without help.
+```
+
+## Half-life: re-test what you embed
+
+Instructions and skills carry assumptions about the model that read them, and a better model can outgrow them. Treat every standing instruction as a hypothesis with a shelf life. When the model changes, re-run the effort setting too, because the same effort name does not mean the same amount of thinking across models.
+
+**H1. The bare-prompt test**
+
+```text
+Here is an instruction I use: [paste]. Take [a real task it is meant for] and run it three ways: with the instruction, with a bare prompt that states only the goal, and with a one-line version of the instruction. Compare the results with [the check]. Tell me which won on what, and recommend keeping, shortening or removing the instruction. Done when the recommendation rests on measured differences.
+```
+
+**H2. The ceiling probe**
+
+```text
+Here is the outcome I want, stated as high as I can: [outcome]. Try to achieve it as stated. When you reach a limit, say exactly where: which step, what you tried, what failed. Then lower the altitude by one step and continue. Report the highest level you reached, with the evidence. I will run this again on the next model.
+```
+
+These prompts are no exception. Re-read them after each model generation.
+
 ## Confidence and permission to fail
 
 The psychology at the end of the article (self-efficacy, Dantzig, Bannister, The Inner Game of Tennis) works surprisingly well on a model too. One condition: tell only the truth. A model told it has tools it lacks gets stuck or starts pretending.
@@ -156,6 +275,26 @@ Don't judge your own work. Before you start, define a check you can run yourself
 When you're done, start a separate agent (or, if you can't, write review instructions for me). Give it only the original task and the final result, not your reasoning or your working steps. Ask it to find errors, weak spots and claims that haven't been verified. Fix what it finds, and tell me which findings you left unfixed and why.
 ```
 
+J3 to J5 are for work where one reviewer is not enough. Scale the crew to the stakes: Anthropic's own guidance for its newest models advises against handing small tasks or self-verification to subagents (see [Going stale](#going-stale)). Keep the crew for work big enough to justify it, and keep outside evidence that brings new information (tests, held-out data, primary sources) as the first judge.
+
+**J3. The adversarial crew**
+
+```text
+When [the work] is done, start [5] separate agents. Give each one the original task and the final result, nothing else, and one job: prove it wrong in a different way (wrong facts, wrong framing, a missing case, a misread source, a hidden assumption). A lighter model is enough for this. Collect their strongest findings.
+```
+
+**J4. A judge for the findings**
+
+```text
+Here are the reviewers' findings: [paste / file]. Start a separate agent as a judge. It rules on each finding: valid, valid but not actionable, or beside the point, with a reason. Return only the valid ones. Then give those to the agent that made the work, and let it decide for each one whether to act, and why.
+```
+
+**J5. Which situation is this**
+
+```text
+For [work], tell me which situation this is. Either I can judge the result myself (I know what good looks like, so I act as the client and give feedback on the result), or I cannot (then we add more adversarial reviewers, more primary sources and more rounds). Say which one, why, and what the first move is.
+```
+
 ## All together
 
 For a big task, when you want every direction at once.
@@ -166,7 +305,7 @@ Task: [description]. Work through this from four directions before doing anythin
 ALTITUDE: What is this meant to achieve? Is my request the right road there, or is there a higher goal you could take ownership of?
 DEPTH: What would the best person in the field do, starting from what raw material and with which instruments?
 RANGE: Which other fields would see something here that people in this field don't? What would they do?
-VERIFICATION: What, other than you, shows that the result is right?
+VERIFICATION: What, other than you, shows that the result is right, and which separate reviewers try to break it?
 
 Present a short plan and start working. Set the bar higher than you think is reasonable. This is solvable, so don't stop at the first plausible result. At the end, report honestly how far you got, what you verified and what remains open.
 ```
@@ -182,5 +321,38 @@ Present a short plan and start working. Set the bar higher than you think is rea
 | Claiming tools that don't exist | It gets stuck or starts pretending | Say exactly what is available |
 | Long permanent instructions full of rules | The important rules get lost | Keep the core instructions short; add task prompts separately |
 | Role-play with the crew | Makes the conversation weird, not the result better | Use the crew to find fields and methods |
+| A named persona agent for every task | Narrows what it reaches for and adds a costume | One general session with full access and documented tools |
+| Pre-sliced data for every task | It works inside the slice | The whole picture through tools with a manual |
+| One reviewer's verdict taken as final | A critique can be fair and still beside the point | A judge rules on each finding, then the maker decides |
+| An instruction kept because it once worked | Guidance expires with the model generation | Re-run the bare-prompt test on each new model |
+| Handing over all review at once | The match is untested | A side-by-side trial first |
 
 The article's "otherwise aliens will blow up Earth" framing is a thinking tool for you, for working out who you need. It isn't worth writing into the prompt as pressure.
+
+## Going stale
+
+Checked on 2026-10-27 against Anthropic's own documentation (sources below). The model pages change with every release, so read this table as a snapshot and re-read the sources before relying on it.
+
+| Practice | What the documentation says now | Do this instead |
+| --- | --- | --- |
+| Emphatic wording (ALL CAPS, "CRITICAL", "MUST") and "if in doubt, use the tool" | Newer models respond strongly to system prompts, so emphasis that once fixed undertriggering now overtriggers | Plain conditions: "Use this tool when ..." |
+| Anti-laziness and "be thorough" pushes | Behaviour that undertriggered before now triggers appropriately | Remove or soften them; set effort instead |
+| Generic re-check rituals ("double-check", "verify before answering", subagent checks on small tasks) | The newest models verify on their own, and the ritual can cause over-verification | Drop the ritual; keep outside evidence that adds information (tests, held-out data, primary sources) |
+| Manual chain-of-thought scaffolds, thinking budgets, prefilled replies | Replaced by adaptive thinking and an effort setting; on some models the old forms return errors | Set effort; ask for the answer or a summary of actions, not verbatim reasoning |
+| Blanket formatting bans and blanket brevity rules | Default formatting and length differ between models, and a blanket ban can strip structure the content needs | Say when formatting helps, and define the anti-pattern you want avoided |
+| Role as the whole method | The documentation still endorses a one-line role to focus tone and behaviour; it adds no method | At most one line of role for tone and scope, then name the actions and tools for the work |
+| Long skills that explain what the model already knows | Skill text competes for the same context window, and the model is assumed to be capable | Keep only what is specific to the task; build evaluations first; test on every model you use |
+| Pre-loading data for every task | Lightweight references loaded at runtime through tools, often combined with a small core loaded up front | Documented tools plus a short up-front core |
+
+The thread through the table: write for the model you have now, at the altitude where the instruction still carries information, and test again when the model changes.
+
+## Sources
+
+Retrieved on 2026-10-27. Pages without a date carry none on the page itself.
+
+- [Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) (Claude Platform Docs): role in the system prompt, emphatic wording, reasons behind instructions, prefills, thinking and effort.
+- [Prompting Claude Opus 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5) (Claude Platform Docs): self-verification, re-check instructions, subagent limits, effort sweeps.
+- [Prompting Claude Fable 5.1](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1) (Claude Platform Docs): formatting and brevity rules, scope statements, narration.
+- [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic Engineering, 2025-09-29): the right altitude for instructions, just-in-time retrieval, guidance changing as models improve.
+- [Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents) (Anthropic Engineering, 2025-09-11): tool descriptions as a manual, evaluation-driven iteration, high-signal tool output.
+- [Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) (Claude Platform Docs): concise skills, degrees of freedom, testing per model, evaluations before documentation.
